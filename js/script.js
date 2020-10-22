@@ -118,3 +118,43 @@ activityInputs.forEach((input) => {
 })
 /*- ------------------------------------- -*/
 /*- ------------------------------------- -*/
+/*-- ”Payment Information” section --*/
+const paymentOptionInput = document.querySelector('#payment');
+const creditCardDiv = document.querySelector('.credit-card');
+const paypalDiv = document.querySelector('.paypal');
+const bitcoinDiv = document.querySelector('.bitcoin');
+
+paymentOptionInput.value = 'credit card'; // input set to 'credit card' by default.
+
+paymentOptionInput.addEventListener('change', (e) => {
+    if (e.target.value == 'credit card') {
+        hideOrShowPaymentDivs('none', 'none', 'block');
+    } else if (e.target.value == 'paypal') {
+        hideOrShowPaymentDivs('none', 'block', 'none');
+    } else {
+        hideOrShowPaymentDivs('block', 'none', 'none');
+    }
+})
+// function that sets the display of the payment divs.
+const hideOrShowPaymentDivs = (bitcoin, paypal, creditCard) => {
+    bitcoinDiv.style.display = bitcoin;
+    paypalDiv.style.display = paypal;
+    creditCardDiv.style.display = creditCard;
+}
+/*- ------------------------------------- -*/
+/*- ------------------------------------- -*/
+/*-- form validation --*/
+const formButton = document.querySelector('#submit');
+const form = document.querySelector('form');
+const nameField = document.querySelector('#name');
+const nameErrorMsg = document.querySelector('#invalid_name_msg');
+
+const nameRegex = /^\D+$/;
+
+form.addEventListener('submit', (e) => {
+    if (!nameRegex.test(nameField.value)) {
+        e.preventDefault();
+        nameField.style.border = '3px solid red';
+        nameErrorMsg.style.display = 'inline-block';
+    }
+})

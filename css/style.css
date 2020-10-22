@@ -136,7 +136,10 @@ label span {
 	margin: 0 0 1em 1em;
 	font-size: .95em;
 }
-
+#invalid_name_msg {
+	color: red;
+	display: none;
+}
 /* ================================= 
   Page Styles
 ==================================== */
@@ -175,14 +178,13 @@ label span {
 	background: rgba(255, 255, 255, 0.1);
 	border-radius: 4px;
 }
-
+.paypal,
+.bitcoin {
+	display: none;
+}
 /* ================================= 
   Helper Classes
 ==================================== */
-
-.is-hidden {
-	display: none;
-}
 
 .clearfix::after {
   content: " ";
