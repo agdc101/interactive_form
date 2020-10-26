@@ -63,7 +63,7 @@ button {
 
 legend {
 	font-weight: bold;
-	padding-top: .5em;
+	padding-top: 1.25em;
 	border-top: 2px solid rgba(8, 63, 87, 0.6);
 	margin-bottom: 1.125em;
 }
@@ -130,14 +130,28 @@ option {
 	display: none;
 }
 
-label span {
+fieldset span {
+	font-style: italic;
 	color: red;
 	display: none;
-	margin: 0 0 1em 1em;
-	font-size: .95em;
 }
-#invalid_name_msg {
-	color: red;
+#workshop_cost {
+	display: inline;
+	color: darkblue;
+}
+.background_error {
+	background-color: rgb(255, 119, 119);
+	padding: .75rem;
+	border-radius: .5rem;
+}
+#activity_msg,
+#submit_error {
+	font-style: italic;
+	font-size: 1.15rem;
+	margin: 0 0 .5rem .5rem;
+	color: darkred;
+}
+#submit_error {
 	display: none;
 }
 /* ================================= 
