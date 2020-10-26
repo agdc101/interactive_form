@@ -50,21 +50,21 @@ const fieldReset = (input, msg1, msg2) => {
     input.style.border = '';
     msg1.style.display = 'none';
     msg2.style.display = 'none';
-}
+};
 const sectionReset = (section, msg) => {
     section.classList.remove('background_error');
     msg.style.display = 'none';
-}
+};
 
 // error functions. makes an error message display and a gives the field a red border or gives the section a red background.
 const inputError = (input, msg) => {
     msg.style.display = 'block';
     input.style.border = '2px solid red';
-}
+};
 const sectionError = (section, msg) => {
     section.classList.add('background_error');
     msg.style.display = 'block';
-}
+};
 
 // removes the main error message when the user re-engages with the page.
 window.addEventListener('change', () => {
@@ -163,14 +163,14 @@ const disableOption = (option) => {
     option.disabled = true;
     option.closest('label').style.color = 'gray';
     option.nextElementSibling.style.display = 'block';
-}
+};
 
 // function that enables a checkbox option and hides the hidden message
 const enableOption = (option) => {
     option.disabled = false;
     option.closest('label').style.color = 'black';
     option.nextElementSibling.style.display = 'none';
-}
+};
 
 // gets the total cost of all the events that are checked.
 const getTotalCost = () => {
@@ -202,7 +202,7 @@ const eventClash = (input, index, array) => {
     else if (index == 1 && !input.checked) {
         enableOption(array[0]);
     }
-}
+};
 // function listens for changes on the activity list.
 activityInputs.forEach((input) => {
     input.addEventListener('change', () => {
@@ -250,13 +250,13 @@ paymentOption.addEventListener('change', (e) => {
     } else {
         hideOrShowPaymentDivs('block', 'none', 'none');
     }
-})
+});
 // function that sets the display of the payment divs.
 const hideOrShowPaymentDivs = (bitcoin, paypal, creditCard) => {
     bitcoinDiv.style.display = bitcoin;
     paypalDiv.style.display = paypal;
     creditCardDiv.style.display = creditCard;
-}
+};
 
 // checks the whether all the card details match the regex and are not empty!
 const cardCheck = ((number, zip, cvv) => {
@@ -276,7 +276,7 @@ const validatorFunc = (input, inputVal, regex, blankMsg, errorMsg) => {
     } else {
         fieldReset(inputVal, errorMsg, blankMsg);
     }
-}
+};
 
 // sends the relevant data to the validator function builder, for each field.
 const cardNumValidator = (input) => { 

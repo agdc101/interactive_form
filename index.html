@@ -11,8 +11,8 @@
 	<div class="container">
     
     <header>
-      <span>Register for</span>
-      <h1>Full Stack Conf</h1>
+      <span>Welcome to</span>
+      <h1>Javascript Form Interaction</h1>
     </header>
 
     <form action="index.html" method="post" novalidate>
@@ -22,12 +22,12 @@
         
         <label for="name">Name:</label>
         <span id='name_msg'>valid name required</span>
-        <span id='no_name_msg'>name field is blank</span>
+        <span id='no_name_msg'>* name field is blank</span>
         <input type="text" id="name" name="user-name">
         
         <label for="mail">Email:</label>
-        <span id='email_msg'>email must be in valid format</span>
-        <span id='no_email_msg'>email field is blank</span>
+        <span id='email_msg'>* email must be in valid format</span>
+        <span id='no_email_msg'>* email field is blank</span>
         <input type="email" id="mail" name="user-email">
         
         <label for="title">Job Role</label>
@@ -85,7 +85,7 @@
 
       <fieldset class="activities">
         <legend>Register for Activities</legend>
-        <span id='activity_msg'>Please select at least 1 workshop.</span>
+        <span id='activity_msg'>* please select at least 1 workshop.</span>
           <label>
             <input type="checkbox" name="all" data-cost="200"> Main Conference — $200
           </label>
@@ -134,22 +134,22 @@
 
           <div class="col-6 col">
             <label for="cc-num">Card Number:</label>
-            <span id='cardNo_msg'>number between 13 and 16 required</span>
-            <span id='noCard_msg'>card number required</span>
+            <span id='cardNo_msg'>* number between 13 and 16 required</span>
+            <span id='noCard_msg'>* card number required</span>
             <input id="cc-num" name="user-cc-num" type="text">
           </div>
 
           <div class="col-3 col">
             <label for="zip">Zip Code:</label>
-            <span id='zipNo_msg'>5 digit number required</span>
-            <span id='noZip_msg'>zip number required</span>
+            <span id='zipNo_msg'>* 5 digit number required</span>
+            <span id='noZip_msg'>* zip number required</span>
             <input id="zip" name="user-zip" type="text"> 
           </div>
 
           <div class="col-3 col">
             <label for="cvv">CVV:</label>
-            <span id='cvvNo_msg'>3 digit number required</span>
-            <span id='noCvv_msg'>cvv number required</span>
+            <span id='cvvNo_msg'>* 3 digit number required</span>
+            <span id='noCvv_msg'>* cvv number required</span>
             <input id="cvv" name="user-cvv" type="text"> 
           </div>
 
@@ -189,7 +189,7 @@
       </fieldset>        
         
       <button id='submit' type="submit">Register</button>
-      <span id='submit_error'>* There are errors in your form!</span>
+      <span id='submit_error'>* submit failed * There are errors in your form!</span>
     </form>
 
   </div>
