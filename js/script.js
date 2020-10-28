@@ -6,10 +6,13 @@ const nameErrorMsg = document.querySelector('#name_msg');
 const noNameMsg = document.querySelector('#no_name_msg');
 const emailErrorMsg = document.querySelector('#email_msg');
 const noEmailMsg = document.querySelector('#no_email_msg');
+const otherJobDiv = document.querySelector('.job_other');
+const jobRoleInput = document.querySelector('#title');
 //-- t-shirt secton variables.
 const tshirtDesignInput = document.querySelector('#design');
 const tshirtColorInput = document.querySelector('#color');
 const colourOptions = document.querySelectorAll('#color option');
+const colourDiv = document.querySelector('#shirt-colours');
 //-- workshop secton variables.
 const tuesdayMorningEvents = document.querySelectorAll('input[data-day-and-time="Tuesday 9am-12pm"]');
 const tuesdayNoonEvents = document.querySelectorAll('input[data-day-and-time="Tuesday 1pm-4pm"]');
@@ -38,7 +41,7 @@ const pageErrorMsg = document.querySelector('#submit_error');
 /*--- ---------------------------------------- ---*/
 //---- Regex's
 const nameRegex = /^[-a-zA-Z\s]+$/;
-const emailRegex = /\w+@\w+\.\w{2,}/;
+const emailRegex = /\w+@\w+\.\w{3,}/;
 const emptyRegex = /^$/;
 const cardNoRegex = /^\d{13,16}$/;
 const zipRegex = /^\d{5}$/;
@@ -113,8 +116,6 @@ const emailValidator = (input) => {
 };
 /*--- ---------------------------------------- ---*/
 /*- Shows 'other job input' if 'other' is selected for job role -*/
-const otherJobDiv = document.querySelector('.job_other');
-const jobRoleInput = document.querySelector('#title');
 jobRoleInput.addEventListener('change', (e) => {
     if (e.target.value == 'other') {
         otherJobDiv.style.display = 'block';
@@ -124,12 +125,9 @@ jobRoleInput.addEventListener('change', (e) => {
 });
 /*- ------------------------------------- -*/
 /*--------- T-SHIRT SECTION ---------*/
-tshirtColorInput.value = 'noTheme';
-tshirtColorInput.disabled = true;
-
 // Simple function that enables the select list and adjusts the field.
 const updateTshirtField = (tshirt) => {
-    tshirtColorInput.disabled = false;
+    colourDiv.style.display = 'inline-block';
     tshirtColorInput.value = tshirt;
 };
 // event listener that changes the list based on the tshirt design that the user has selected.
@@ -140,17 +138,16 @@ tshirtDesignInput.addEventListener('change', (e) => {
     if (e.target.value === 'js puns') {
         updateTshirtField('cornflowerblue');
         colourOptions.forEach((colour, index) => {
-            if (index > 3 || index == 0) {
+            if (index >= 3) {
                 colour.style.display = 'none';
             }
     })     
     } else if (e.target.value === 'select_theme') {
-        tshirtColorInput.disabled = true;
-        tshirtColorInput.value = 'noTheme';
+        colourDiv.style.display = 'none';
     } else {
         updateTshirtField('tomato');
         colourOptions.forEach((colour, index) => {
-            if (index <= 3) {
+            if (index <= 2) {
                 colour.style.display = 'none';
             }
         }); 

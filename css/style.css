@@ -167,6 +167,9 @@ fieldset span {
 	float: left;
 	margin-right: .85em;
 }
+#shirt-colours {
+	display: none;
+}
 
 .shirt-box {
 	width: 100%;
