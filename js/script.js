@@ -39,7 +39,7 @@ const noCvvMsg = document.querySelector('#noCvv_msg');
 const form = document.querySelector('form');
 const pageErrorMsg = document.querySelector('#submit_error');
 /*--- ---------------------------------------- ---*/
-//---- Regex's
+//-- Regex's
 const nameRegex = /^[-a-zA-Z\s]+$/;
 const emailRegex = /\w+@\w+\.\w{3,}/;
 const emptyRegex = /^$/;
@@ -315,8 +315,8 @@ form.addEventListener('submit', (e) => {
             activityValidator();
             creditCardValidator();
         } else {
-            e.submit();
-        }
+            alert('form submit successful!');
+        };;
     } else {
         if (!nameCheck(nameField.value) || !emailCheck(emailField.value) || !activityValidator()) {
             pageErrorMsg.style.display = 'inline-block';
@@ -325,8 +325,9 @@ form.addEventListener('submit', (e) => {
             nameValidator(nameField);
             activityValidator();
         } else {
-            e.submit();
-        }
+            alert('form submit successful!');
+        };
     }
 });
+
 /*- ----------------------------------- -*/
