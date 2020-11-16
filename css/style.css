@@ -17,7 +17,7 @@ button {
 body {
   font: 1em/1.5;
   color: rgba(6, 49, 68, 0.9);
-  background: #b7eef1;
+  background: #4fb7bd;
 }
 
 header {
@@ -40,7 +40,7 @@ a {
 
 form {
 	padding: .875em 1.875em 1.875em;
-	background: #e6f7ff;
+	background: #ffffff;
 	border: 2px solid rgb(69, 152, 187);
 	border-radius: 6px;
 }
